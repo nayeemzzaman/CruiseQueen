@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -29,115 +29,198 @@
     </header>
 
     <!--Booking Section-->
-    <main class="main-content container">
+    <main id="mainContent" class="main-content container">
 
         <div class="booking-content">
             <h1>Cruise Queen</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book./p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book./p>
         </div>
-
-
-        <div class="booking-form">
-            <h3>Book Ocean Time</h3>
-            <div class="input-group">
-                <label for="">Flying From</label>
-                <input class="inp-style" type="text" name="" placeholder="Dhake, Bangladesh">
-            </div>
-            <div class="input-group">
-                <label for="">Flying To</label>
-                <input class="inp-style" type="text" name="" placeholder="New York, United States">
-            </div>
-            <div class="inputs">
+        <div id='bookingContainer' class="booking-form">
+            <div id="bookingForm">
+                <h3>Book Ocean Time</h3>
                 <div class="input-group">
-                    <label for="">Departure</label>
-                    <input class="inp-style-dep" type="date" name="">
+                    <label for="">Departure From</label>
+                    <input id="departure" class="inp-style" type="text" name="" placeholder="Chittagang">
                 </div>
                 <div class="input-group">
-                    <label for="">Return</label>
-                    <input class="inp-style" type="date" name="">
+                    <label for="">Destination</label>
+                    <input id="destination" class="inp-style" type="text" name="" placeholder="Saint-Matin">
                 </div>
-            </div>
-            <div class="input-group f-class">
-                <div>
-                    <label for="">First Class ($150)</label>
-                    <input id='first-class' class=" inp-style inp-width" type="number" value="0" name="">
-                </div>
-                <div class="plus-minus-btn">
-                    <button onclick="ticketHandler('first-class',true)" class="btn btn-default"><i class="fas fa-plus icon-style"></i></button>
-                    <button onclick="ticketHandler('first-class',false)" class=" btn btn-default"><i class="fas fa-minus icon-style"></i></button>
-                </div>
-            </div>
-            
-            <div class="input-group f-class">
-                <div>
-                    <label for="">Economy ($100)</label>
-                    <input id='second-class' class="inp-style inp-width" type="number"value="0" name="">
-                </div>
-                <div class="plus-minus-btn">
-                    <button onclick="ticketHandler('second-class',true)"  class="btn btn-default"><i class="fas fa-plus icon-style"></i></button>
-                    <button onclick="ticketHandler('second-class',false)" class=" btn btn-default"><i class="fas fa-minus icon-style"></i></button>
-                </div>
-            </div>
-            <div class="calculations">
-                <div class="amount">
-                    <div class="left">
-                        <p>Subtotal</p>
+                <div class="inputs">
+                    <div class="input-group">
+                        <label for="">Departure</label>
+                        <input id='depDateInput' class="inp-style-dep" type="date" name="">
                     </div>
-                    <div class="right">
-                        <p>$<span id='subtotal'>0</span></p>
+                    <div class="input-group">
+                        <label for="">Return</label>
+                        <input id='returnDateInput' class="inp-style" type="date" name="">
+                    </div>
+                </div>
+                <div class="input-group f-class">
+                    <div>
+                        <label for="">First Class ($150)</label>
+                        <input id='first-class' class=" inp-style inp-width" type="text" value="0" name="">
+                    </div>
+                    <div class="plus-minus-btn">
+                        <button onclick="ticketHandler('first-class',true)" class="btn btn-default buttonStyle"><i
+                                class="fas fa-plus icon-style"></i></button>
+                        <button onclick="ticketHandler('first-class',false)" class=" btn btn-default buttonStyle"><i
+                                class="fas fa-minus icon-style"></i></button>
                     </div>
                 </div>
 
+                <div class="input-group f-class">
+                    <div>
+                        <label for="">Economy ($100)</label>
+                        <input id='second-class' class="inp-style inp-width" type="text" value="0" name="">
+                    </div>
+                    <div class="plus-minus-btn">
+                        <button onclick="ticketHandler('second-class',true)" class="btn btn-default buttonStyle"><i
+                                class="fas fa-plus icon-style"></i></button>
+                        <button onclick="ticketHandler('second-class',false)" class=" btn btn-default buttonStyle"><i
+                                class="fas fa-minus icon-style"></i></button>
+                    </div>
+                </div>
+                <div class="calculations">
+                    <div class="amount">
+                        <div class="left">
+                            <p>Subtotal</p>
+                        </div>
+                        <div class="right">
+                            <p>$<span id='subtotal'>0</span></p>
+                        </div>
+                    </div>
+
+                    <div class="amount">
+                        <div class="left">
+                            <p>Charge 10% VAT</p>
+                        </div>
+                        <div class="right">
+                            <p>$<span id='vat'>0</span></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="amount">
+                        <div class="left">
+                            <h4>Total</h4>
+                        </div>
+                        <div class="right">
+                            <p>$<span id='total'>0</span></p>
+                        </div>
+                    </div>
+                </div>
+                <button id='bookNow' type="button" class="btn btn-style" >Book Now</button>
+                
+            </div>
+            <div id='confirmation-msg'>
+                <h2>Your ticket has been booked!</h2>
+                <hr>
                 <div class="amount">
-                    <div class="left">
-                        <p>Charge 10% VAT</p>
-                    </div>
-                    <div class="right">
-                        <p>$<span id='vat'>0</span></p>
-                    </div>
+                    <div class="left"><p><strong>Destination: </strong></p></div> <div class="right"><p><span id='confirmDestination'></span></p></div>
+                </div>
+                <div class="amount">
+                    <div class="left"><p><strong>Departure Date:  </strong></p></div><div class="right"><p><span id='confirmDepDate'></span></p></div>
+                </div>
+                <div class="amount">
+                    <div class="left"><p><strong>Return Date:  </strong></p></div><div class="right"><p><span id='confirmReturnDate'></span></p></div>
+                </div>
+                <div class="amount">
+                    <div class="left"><p><strong>First Class Booked: </strong></p></div><div class="right"><p><span id='firstTicketQuantity'></span></p></div>
+                </div>
+                <div class="amount">
+                    <div class="left"><p><strong>Economy Class Booked: </strong></p></div><div class="right"><p><span id='economyTicketQuantity'></span></p></div>
                 </div>
                 <hr>
                 <div class="amount">
-                    <div class="left">
-                        <h4>Total</h4>
-                    </div>
-                    <div class="right">
-                        <p>$<span id='total'>0</span></p>
-                    </div>
+                    <div class="left"><p><strong>Subtotal: </strong></p></div><div class="right"><p><span id='bookedSubtotal'></span></p></div>
+                </div>  
+                <div class="amount">
+                    <div class="left"><p><strong>Tax: </strong></p></div><div class="right"><p><span id='bookedTax'></span></p></div>
                 </div>
+                    <hr>
+                <div class="amount">
+                    <div class="left"><p><strong>Total: </strong></p></div><div class="right"><p><span id='bookedTotal'></span></p></div>
+                </div>                
             </div>
-            <button class="btn-style">Book Now</button>
         </div>
     </main>
     <script>
         function ticketHandler(id, isIncrease) {
-            var ticketInput=document.getElementById(id);
-            var ticketCount=parseFloat(ticketInput.value);
-            var newTicketCount=ticketCount;
-            if(isIncrease==true){
+            var ticketInput = document.getElementById(id);
+            var ticketCount = parseFloat(ticketInput.value);
+            var newTicketCount = ticketCount;
+            if (isIncrease == true) {
                 newTicketCount++;
             }
-            else if(isIncrease==false&&ticketCount>0){
+            else if (isIncrease == false && ticketCount > 0) {
                 newTicketCount--;
             }
-            ticketInput.value=newTicketCount;
+            ticketInput.value = newTicketCount;
             calculateTotal();
         }
-        function calculateTotal(){
-            var firstClass=getInputValue('first-class');
-            var secondClass=getInputValue('second-class');
-            var subtotal=(firstClass*150)+(secondClass*100);
-            document.getElementById('subtotal').innerText=subtotal;
+        function calculateTotal() {
+            var firstClass = getValue('first-class');
+            var secondClass = getValue('second-class');
+            var subtotal = (firstClass * 150) + (secondClass * 100);
+            document.getElementById('subtotal').innerText = subtotal;
 
-            var tax=subtotal*0.1;
-            document.getElementById('vat').innerText=tax;
-            var total=subtotal+tax;
-            document.getElementById('total').innerText=total;
+            var tax = subtotal * 0.1;
+            document.getElementById('vat').innerText = tax;
+            var total = subtotal + tax;
+            document.getElementById('total').innerText = total;
         }
-        function getInputValue(id){
-            const input=document.getElementById(id);
-            const inputValue=parseFloat(input.value);
+        function getValue(id) {
+            const input = document.getElementById(id);
+            const inputValue = parseFloat(input.value);
             return inputValue;
+        }
+        function getText(id){
+            const input = document.getElementById(id);
+            const inputValue = parseFloat(input.innerText);
+            return inputValue;
+        }
+        document.getElementById('bookNow').addEventListener('click', function () {
+            if(document.getElementById('total').innerText=='0'){
+                alert('Please booked ticket!');
+            }
+            else{
+                var displayForm = document.getElementById('bookingForm');
+                displayForm.style.display = 'none';
+                var book=document.getElementById('bookingContainer');
+                book.style.width='400px';
+                book.style.height='600px'
+                var confirmMsg=document.getElementById('confirmation-msg');
+                confirmMsg.style.display='block';
+                var departure=inputValue('departure');
+                var destination=inputValue('destination');
+                setInnerText('confirmDestination', departure+' To '+destination);
+                var getInputText=inputValue('depDateInput');
+                setInnerText('confirmDepDate', getInputText);
+                getInputText=inputValue('returnDateInput');
+                setInnerText('confirmReturnDate', getInputText);
+                var firstClass=getValue('first-class');
+                setInnerText('firstTicketQuantity', firstClass);
+                var secondClass=getValue('second-class');
+                setInnerText('economyTicketQuantity',secondClass);
+                getInputText=getText('subtotal');
+                console.log(getInputText);
+                setInnerText('bookedSubtotal', getInputText);
+                getInputText=getText('vat');
+                setInnerText('bookedTax', getInputText);
+                getInputText=getText('total');
+                setInnerText('bookedTotal', getInputText);
+            }
+            
+        })
+        function inputValue(id){
+            var value=document.getElementById(id).value;
+            return value; 
+        }
+        function setInnerText(id, value){
+            var fromTo=document.getElementById(id);
+            fromTo.innerText=value;
         }
     </script>
     <!--Thank You-->

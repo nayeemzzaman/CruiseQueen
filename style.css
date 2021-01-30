@@ -57,10 +57,10 @@ nav ul li a:hover, a.active{
     font-weight: 500;
 }
 .booking-form{
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #E33741;
+    color: white;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     float: right;
     width: 65%;
     margin-left: 180px;
@@ -92,6 +92,9 @@ nav ul li a:hover, a.active{
     border-radius: 4px;
     margin: 10px 0;
 }
+.booking-form label{
+    font-weight: bold;
+}
 .f-class{
     display: flex;
 }
@@ -99,7 +102,7 @@ nav ul li a:hover, a.active{
     min-width: 280px;
 }
 .plus-minus-btn{
-    margin-top: 35px;
+    margin-top: 33px;
     margin-left: 10px;
     padding-top: 10px;
 }
@@ -114,9 +117,15 @@ nav ul li a:hover, a.active{
     padding: 10px;
     border-radius: 5px;
     border: none;
-    color: #fff;
+    color: #E33741;
     font-weight: 500;
-    background-color:  #E33741;
+    background-color:  white;
+}
+.buttonStyle:hover{
+    background-color: #E33741;
+}
+.buttonStyle:hover>.icon-style{
+    color: white;
 }
 .amount{
     display: flex;
@@ -124,4 +133,12 @@ nav ul li a:hover, a.active{
 }
 .icon-style{
     color: #E33741;
+    font-size: 27px;
+}
+.icon-style:hover{
+    color: white;
+}
+#confirmation-msg{
+    display: none;
+    color: white;
 }
